@@ -4,8 +4,8 @@ const User = require("../models/User"); // Import User model
 // POST /api/tasks - Create a new task
 exports.createTask = async (req, res) => {
 
-    const task = await Task.create({ ...req.body, owner: req.user.i }); // Create a new task with the request body and authenticated user ID
-    res.json(task); // Send a JSON response with the created task
+  const task = await Task.create({ ...req.body, owner: req.user.i }); // Create a new task with the request body and authenticated user ID
+  res.json(task); // Send a JSON response with the created task
 };
 
 // GET /api/tasks - Get all tasks for the authenticated user

@@ -35,7 +35,7 @@ exports.login = async (req, res) => {
         return res.status(401).json({ message: "Incorrect password" }); // If passwords do not match, return error response
     };
 
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, 
+    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET,
         { expiresIn: '1h' } // Set token expiration to 1 hour
     ); // Generate a JWT token with user ID and role
 
