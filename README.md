@@ -98,7 +98,7 @@ Task-Manager/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/Sainttyga/Task-Manager.git 
+git clone: https://github.com/Sainttyga/MERN-Stack_Task-Manager.git
 cd task-manager
 ```
 
