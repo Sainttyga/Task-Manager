@@ -12,7 +12,7 @@ API.interceptors.request.use((cfg) => {
       cfg.headers.Authorization = `Bearer ${(token)}`; // Add the token to the request headers
       // cfg.headers.Authorization = `Bearer ${token}`; // Add the token to the request headers
     }
-    return cfg; // Return the configuration object
+    return cfg; // Return the configuration object, which includes the headers
 });
 
 export default API; // Export the axios instance, which can be used in other parts of the application
