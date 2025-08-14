@@ -17,7 +17,7 @@ export default function Login() { // Login component
         if (!email || !password) return alert("All fields required"); // Check for empty fields
         setLoading(true); // Set loading state to true while processing login
         try { // Try to log in the user
-            const res = await API.post("/auth/login", { email, password }); // Send login request to API 
+            const res = await API.post("/auth/login", { email, password }); // Send login request
             localStorage.setItem("token", res.data.token); // Store token in local storage
             navigate("/dashboard"); // Navigate to dashboard after successful login
             if (!res.data?.token) { // Check if token is not present
@@ -50,6 +50,7 @@ export default function Login() { // Login component
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
+                    
                 </CardContent>
                 <CardFooter className="flex justify-between">
                     <Button onClick={handleLogin} disabled={loading} className="w-full">

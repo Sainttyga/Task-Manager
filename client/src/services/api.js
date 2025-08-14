@@ -9,7 +9,7 @@ API.interceptors.request.use((cfg) => {
     const token = localStorage.getItem("token"); // Get the token from local storage
     if (token) {
       // If the token exists
-      cfg.headers.Authorization = `Bearer ${JSON.parse(token).token}`; // Add the token to the request headers
+      cfg.headers.Authorization = `Bearer ${(token)}`; // Add the token to the request headers
       // cfg.headers.Authorization = `Bearer ${token}`; // Add the token to the request headers
     }
     return cfg; // Return the configuration object

@@ -14,6 +14,7 @@ export default function Signup() {
     const [password, setPassword] = useState(""); // State for password input, initialized to an empty string
     const [loading, setLoading] = useState(false); // State for loading indicator, initialized to false
     const navigate = useNavigate(); // useNavigate hook for programmatic navigation
+    
 
     const handleSignup = async () => { // handleSignup function, async function for handling signup
 
@@ -21,6 +22,7 @@ export default function Signup() {
         setLoading(true); // Set loading state to true while processing signup
         try {
             const res = await API.post("/auth/signup", { username, email, password }); // Send signup request to API
+            
             localStorage.setItem("token", res.data.token); // Store token in localStorage
             navigate("/dashboard"); // Navigate to dashboard on successful signup
         } catch (err) { // Catch any errors during signup

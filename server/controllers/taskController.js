@@ -19,7 +19,7 @@ exports.getAllTasks = async (req, res) => {
 };
 
 // PUT /api/tasks/:id - Update a task by ID
-exports.updateTask = async (req, res) => { 
+exports.updateTask = async (req, res) => {
   try {
     const task = await Task.findById(req.params.id); // Find task by ID
 
@@ -64,4 +64,3 @@ exports.deleteTask = async (req, res) => {
     res.status(400).json({ message: error.message }); // Send error message as response
   }
 };
-

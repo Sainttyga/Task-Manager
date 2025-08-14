@@ -7,6 +7,6 @@ const taskSchema = new mongoose.Schema({
   description: { type: String, required: true }, // Define description field with required validation
   completed: { type: Boolean, default: false }, // Define completed field with default value
   // status: { type: String, enum: ["pending", "completed"], default: "pending" }, // Define status field with enum validation and default value
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }, // Define userId field with reference to User model and required validation
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }, // Define userId field with reference to User model and required validation
 });
-module.exports = mongoose.model("Task", taskSchema); // Export the Task model based on the defined schema
+module.exports = mongoose.model("Task", taskSchema); // Export the Task model based on the defined schemao
